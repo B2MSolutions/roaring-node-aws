@@ -18,7 +18,7 @@
     "url": "git+https://github.com/SalvatorePreviti/roaring-node-aws.git"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "main": "index.js",
   "types": "index.d.ts",

@@ -1,13 +1,13 @@
-FROM amazonlinux:2 as builder
+FROM amazonlinux:2023 as builder
 
-ARG NODE_VERSION=16.20.2
+ARG NODE_VERSION=20.18.0
 ARG NVM_DIR=/usr/local/nvm
 
 ARG PYTHON_VERSION=3.12.2
 ARG PYENV_ROOT=/usr/local/pyenv
 
 RUN yum groupinstall -y -q "Development Tools"
-RUN yum install -y -q zlib-devel bzip2-devel readline-devel sqlite-devel openssl11-devel tk-devel libffi-devel xz-devel
+RUN yum install -y -q zlib-devel bzip2-devel readline-devel sqlite-devel openssl-devel tk-devel libffi-devel xz-devel
 
 RUN curl https://pyenv.run | bash
 RUN $PYENV_ROOT/bin/pyenv install $PYTHON_VERSION && $PYENV_ROOT/bin/pyenv global $PYTHON_VERSION
