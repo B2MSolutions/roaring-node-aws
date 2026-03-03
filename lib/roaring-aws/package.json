@@ -1,6 +1,6 @@
 {
   "name": "roaring",
-  "version": "2.4.0",
+  "version": "2.7.0",
   "private": true,
   "description": "CRoaring official port for NodeJS",
   "keywords": [
@@ -8,6 +8,7 @@
     "Roaring",
     "bitmaps"
   ],
+  "type": "commonjs",
   "license": "Apache-2.0",
   "author": "Salvatore Previti",
   "homepage": "https://github.com/SalvatorePreviti/roaring-node#readme",
@@ -23,22 +24,23 @@
     "url": "git+https://github.com/SalvatorePreviti/roaring-node.git"
   },
   "engines": {
-    "node": ">=16.14.0"
+    "node": ">=18.20.8"
   },
   "main": "index.js",
   "types": "index.d.ts",
   "typings": "index.d.ts",
   "binary": {
     "module_name": "roaring",
-    "module_path": "./native/roaring-{node_abi}-{platform}-{arch}",
+    "module_path": "./native/roaring-{node_abi}-{platform}-{arch}-{libc}",
+    "package_name": "roaring-v{version}-{node_abi}-{platform}-{arch}-{libc}.tar.gz",
     "host": "https://github.com/SalvatorePreviti/roaring-node/releases/download/",
     "remote_path": "{version}"
   },
   "dependencies": {
-    "@mapbox/node-pre-gyp": "^1.0.11"
+    "@mapbox/node-pre-gyp": "^2.0.3"
   },
   "peerDependencies": {
-    "node-gyp": "^10.2.0"
+    "node-gyp": "^12.1.0"
   },
   "peerDependenciesMeta": {
     "node-gyp": {
@@ -46,7 +48,7 @@
     }
   },
   "optionalDependencies": {
-    "node-gyp": "^10.2.0"
+    "node-gyp": "^12.1.0"
   },
-  "roaring_version": "4.1.2"
+  "roaring_version": "4.5.0"
 }

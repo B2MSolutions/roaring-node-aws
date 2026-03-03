@@ -1,6 +1,6 @@
-FROM amazonlinux:2023 as builder
+FROM amazonlinux:2023 AS builder
 
-ARG NODE_VERSION=20.18.0
+ARG NODE_VERSION=24.13.1
 ARG NVM_DIR=/usr/local/nvm
 
 ARG PYTHON_VERSION=3.12.2
@@ -16,8 +16,8 @@ RUN mkdir -p $NVM_DIR
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.40.1/install.sh | bash
 RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION"
 
-ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
-ENV PATH $PYENV_ROOT/versions/$PYTHON_VERSION/bin:$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+ENV NODE_PATH=$NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
+ENV PATH=$PYENV_ROOT/versions/$PYTHON_VERSION/bin:$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 RUN mkdir -p /var/task
 WORKDIR /var/task
