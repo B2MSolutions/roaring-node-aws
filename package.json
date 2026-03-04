@@ -42,7 +42,8 @@
     "rebuild": "./rebuild.sh"
   },
   "dependencies": {
-    "roaring": "^2.4.0"
+    "roaring": "^2.4.0",
+    "picomatch": "^4.0.3"
   },
   "devDependencies": {
     "@types/node": "^13.1.4",
